@@ -1,0 +1,89 @@
+.navbar .profile {
+  width: 60px;
+  height: 60px;
+  background-color: #aeaeae;
+}
+
+.navbar .judul {
+  color: #2e86de;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.navbar .nav-link {
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+.navbar .nav-link:hover {
+  border-bottom: 3px solid #2e86de;
+  margin-top: 1px;
+  padding-bottom: 3px;
+  margin-bottom: -3px;
+}
+
+/* tabel */
+.container .row {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+.container .col {
+  padding: 30px;
+}
+.container .row .search {
+  width: 400px;
+  border-top: 0;
+  border-left: 0;
+}
+
+.container .row svg {
+  margin-top: -65px;
+  margin-left: 360px;
+  width: 25px;
+  height: 25px;
+}
+
+.container .btn-create {
+  background-color: #2e86de;
+  color: #fff;
+  margin-top: -70px;
+  margin-left: 650px;
+}
+
+.container .table .photo {
+  width: 90px;
+  border-radius: 15px;
+}
+
+.container .table thead {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+.container .table thead tr {
+  opacity: 0.5;
+}
+
+.container .table tbody {
+  font-size: 18px;
+}
+.container .table .table-address {
+  width: 300px;
+}
+
+.container .table tr td {
+  vertical-align: middle;
+}
+
+.container .table .btn-warning {
+  color: #fff;
+}
+
+.container .table .bi-three-dots-vertical {
+  background-color: #ffffff;
+  color: #aeaeae;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  margin-left: 10px;
+  margin-top: 0;
+  height: 40px;
+  width: 40px;
+}

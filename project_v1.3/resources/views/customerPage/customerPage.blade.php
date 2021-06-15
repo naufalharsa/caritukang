@@ -56,7 +56,7 @@
                             <td>{{$customer -> nama}}</td>
                             <td>{{$customer -> alamat}}</td>
                             <td>
-                                <a href="#" class="badge bg-warning text-decoration-none">Edit</a>
+                                <a href="#" class="badge bg-success text-decoration-none">Edit</a>
                                 <a href="#" class="badge bg-danger text-decoration-none">Delete</a>
                             </td>
                             <td>

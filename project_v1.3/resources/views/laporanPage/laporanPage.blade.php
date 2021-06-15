@@ -28,7 +28,7 @@
             </div>
             <div class="col-8">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="{{ route('customers.create') }}" class="btn btn-primary me-md-2" type="button">Print Laporan/a>
+                    <a href="{{ route('customers.create') }}" class="btn btn-primary me-md-2 laporan" type="button">Create Laporan </a>
                 </div>
             </div>
         </div>
@@ -49,52 +49,48 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach ($mitra as $mitra)
                         <tr>
-                          <th scope="row">{{$loop -> iteration}}</th>
-                            <td>{{$mitra -> nama}}</td>
-                            <td>{{$mitra -> role}}</td>
+                          <th scope="row photo"></th>                         
+                            <td></td>
                             <td>
-                                <a href="#" class="badge bg-warning text-decoration-none">Edit</a>
+                                <a href="#" class="badge bg-success text-decoration-none">Edit</a>
                                 <a href="#" class="badge bg-danger text-decoration-none">Delete</a>
+                                <a href="#" class="badge bg-info text-decoration-none">Print</a>
                             </td>
                             <td>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#detailsModal{{$mitra->id}}" >
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#detailsModal" >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical ms-3 rounded-circle shadow" style="width:20px;height:20px;" viewBox="0 0 16 16">
                                     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
                                     </svg>
                                 </a>
                                 <!-- Modal View Data -->
                                 <!-- Modal -->
-                                <div class="modal fade" id="detailsModal{{$mitra->id}}" tabindex="-1" aria-labelledby="detailsModal" aria-hidden="true">
+                                <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModal" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="detailsModalTitle">Detail Mitra</h5>
+                                                <h5 class="modal-title" id="detailsModalTitle">Detail Laporan</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                             
                                                 <form>
+                                                    <div class="col-5">
+                                                        <div class="profile-update rounded-circle float-start"></div>
+                                                    </div>
                                                     <div class="mb-3">
-                                                        <label for="nama" class="form-label">Nama lengkap</label>
-                                                        <input type="text" class="form-control" id="nama" value="{{ $mitra->nama }}" readonly>
+                                                        <label for="title" class="form-label">Report Title</label>
+                                                        <input type="text" class="form-control w-50" id="title" value="" readonly>
                                                     </div> 
-                                                    <!-- <div class="mb-3">
-                                                        <label for="category" class="form-label">Nomor Handphone</label>
-                                                        <input type="text" class="form-control" id="category" value="{{ $mitra->category }}" readonly>
-                                                    </div> -->
+                            
                                                     <div class="mb-3">
-                                                        <label for="alamat" class="form-label">Alamat</label>
-                                                        <input type="alamat" class="form-control" id="alamat" value="{{ $mitra->alamat }}" readonly>
+                                                        <label for="category" class="form-label">Category</label>
+                                                        <input type="text" class="form-control w-50" id="category" value="" readonly>
                                                     </div>
+                                                  
                                                     <div class="mb-3">
-                                                        <label for="nomorhp" class="form-label">Nomor Handphone</label>
-                                                        <input type="text" class="form-control" id="nomorhp" value="{{ $mitra->nomorhp }}" readonly>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="email" class="form-label">Email address</label>
-                                                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" value="{{ $mitra->email }}" readonly>
+                                                        <label for="description" class="form-label">Description</label>
+                                                        <textarea class="form-control" id="description-text" rows="5" placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur atque consequatur voluptate beatae in inventore iusto dignissimos sint molestiae consequuntur."></textarea>
                                                     </div>
                                                 </form>
 
@@ -108,7 +104,6 @@
                                 </div>
                             </td>
                         </tr>
-                    @endforeach
                     </tbody>
                 </table>
             </div>

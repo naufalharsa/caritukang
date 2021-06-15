@@ -38,7 +38,17 @@ class customerController extends Controller
     public function store(Request $request)
     {
         //
+        $request -> validate([
+            'nama' => 'required',
+            'email' => 'required',
+        ]);
+
+        Customer::create($request->all());
+
+        return redirect('/')->with('status', 'Data customer berhasil ditambahkan');
     }
+
+
 
     /**
      * Display the specified resource.
@@ -49,6 +59,7 @@ class customerController extends Controller
     public function show(Customer $customer)
     {
         //
+        
     }
 
     /**
@@ -73,7 +84,7 @@ class customerController extends Controller
     {
         //
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -83,5 +94,8 @@ class customerController extends Controller
     public function destroy(Customer $customer)
     {
         //
+        Customer::destroy($customer->id);
+        return redirect('/')->with('status', 'Data customer berhasil dihapus');
     }
+    
 }

@@ -17,6 +17,7 @@ class AddDeletedAtToAdministrators extends Migration
             //
             $table->softDeletes();
         });
+
     }
 
     /**

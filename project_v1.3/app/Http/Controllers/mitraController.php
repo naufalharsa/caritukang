@@ -38,8 +38,17 @@ class mitraController extends Controller
     public function store(Request $request)
     {
         //
+        $request -> validate([
+            'nama' => 'required',
+            'email' => 'required',
+        ]);
+
+        Mitra::create($request->all());
+
+        return redirect('/')->with('status', 'Data mitra berhasil ditambahkan');
     }
 
+ 
     /**
      * Display the specified resource.
      *
@@ -74,7 +83,7 @@ class mitraController extends Controller
         //
     }
 
-    /**
+       /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Mitra  $mitra
@@ -83,5 +92,8 @@ class mitraController extends Controller
     public function destroy(Mitra $mitra)
     {
         //
+        Mitra::destroy($mitra->id);
+        return redirect('/')->with('status', 'Data mitra berhasil dihapus');
     }
+
 }

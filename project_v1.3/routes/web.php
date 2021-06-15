@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('adminPage.adminPage');
-// });
 // Route::get('/customerPage', function () {
 //     return view('customerPage.customerPage');
 // });
@@ -30,7 +27,6 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/customerPage', [customerController::class,'index']);
 
 // Route::post('/', [adminController::class, 'store']);
-
 Route::get('/', [adminController::class,'index']);
 Route::resource('administrators',adminController::class);
 // Route::get('/administrators/{administrator}/edit', [adminController::class, 'edit']);

@@ -7,10 +7,13 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
     <title>@yield('title')</title>
   </head>
   <body>
+
+  <!-- Main menu  -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand text-primary fs-2" href="/">CariTukang</a>
@@ -19,7 +22,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                 <div class="navbar-nav fs-5">
-                    <a class="nav-link active" aria-current="page" href="/">Administrator</a>
+                    <a class="nav-link " aria-current="page" href="/">Administrator</a>
                     <a class="nav-link" href="{{ route('customers.index')}}">Customer</a>
                     <a class="nav-link" href="{{ route('mitra.index')}}">Mitra</a>
                     <a class="nav-link" href="{{ route('laporan.index') }}">Laporan</a>
@@ -30,7 +33,7 @@
             </div>
         </div>
       </nav>
-    
+  <!-- --------------- -->
     @yield('container');
     <!-- @yield('content'); -->
 

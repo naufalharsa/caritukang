@@ -17,7 +17,6 @@ class adminController extends Controller
     public function index(Request $request)
     {
         //
-        // $administrator = DB::table('administrators')->get();
         $administrator = \App\Models\Administrator::where('nama','like','%'. $request->search . '%')->get();
         return view('adminPage.adminPage', ['administrator' => $administrator, 'search' => $request->search]);
     }
@@ -29,7 +28,7 @@ class adminController extends Controller
      */
     public function create()
     {
-        //
+        // Untuk membuat akun admin baru
         return view('adminPage.createAdminPage');
     }
 
@@ -41,7 +40,7 @@ class adminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Untuk menyimpan data akun admin
 
         $request -> validate([
             'nama' => 'required',
@@ -114,7 +113,7 @@ class adminController extends Controller
      */
     public function destroy(Administrator $administrator)
     {
-        //
+        //Untuk menghapus data akun admin
         Administrator::destroy($administrator->id);
         return redirect('/')->with('status', 'Data administrator berhasil dihapus');
     }

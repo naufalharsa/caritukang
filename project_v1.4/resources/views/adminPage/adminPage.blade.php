@@ -28,12 +28,12 @@
             </div>
             <div class="col-8">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="{{ route('administrators.create') }}" class="btn btn-primary me-md-2" type="button">Create Administrator</a>
+                    <a href="{{ route('administrators.create') }}" class="btn btn-primary me-md-2 shadow" type="button">Create Administrator</a>
                 </div>
             </div>
         </div>
         @if (session('status'))
-        <div class="alert alert-success w-100">
+        <div class="alert alert-success">
             {{ session('status') }}
         </div>
         @endif
@@ -42,7 +42,8 @@
                 <table class="table">
                     <thead>
                         <tr>
-                           <th scope="col">Photo</th>
+                           <th scope="col">No</th>
+                           <th scope="col">ID</th>
                            <th scope="col">Administrator Name</th> 
                            <th scope="col">Role</th>
                            <th scope="col">Action</th>
@@ -53,6 +54,7 @@
                     @foreach ($administrator as $admin)
                         <tr>
                           <th scope="row">{{$loop -> iteration}}</th>
+                            <td>{{$admin -> id}}</td>
                             <td>{{$admin -> nama}}</td>
                             <td>
                                 <span class="badge bg-info">{{$admin -> role}}</span>
@@ -81,24 +83,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                            <!-- <div class="container">
-                                                <div class="row">
-                                                    <div class="col-8">                                                        
-                                                        <div class="card" style="width: 20rem;">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">{{ $admin->nama }}</h5>
-                                                                <h6 class="card-subtitle mb-2 text-muted">{{ $admin->alamat}}</h6>
-                                                                <p class="card-text">Nomor Handphone : {{ $admin->nomorhp }}</p>
-                                                                <p class="card-text">Email : {{ $admin->email }}</p> 
-                                                                <p class="card-text">Role : {{ $admin->role }}</p> 
-                                                                <button href="#" class="btn btn-primary">Edit</button>
-                                                                <button href="#" class="btn btn-danger">Delete</button>
-                                                                <a href="{{url('/')}}" class="card-link text-decoration-none">Kembali</a>
-                                                            </div>
-                                                        </div> 
-                                                    </div>
-                                                </div>
-                                            </div> -->
+                                            
                                                 <form>
                                                     <div class="mb-3">
                                                         <label for="nama" class="form-label">Nama lengkap</label>
@@ -141,7 +126,3 @@
 
 </div>
 @endsection
-
-<script>
-    
-</script>

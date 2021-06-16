@@ -15,12 +15,12 @@ class CreateMitrasTable extends Migration
     {
         Schema::create('mitras', function (Blueprint $table) {
             $table->id();
-            // $table->category_id();
             $table->string('username',12);
             $table->string('password',12);
             $table->string('nama');
             $table->string('alamat');
             $table->string('nomorhp',12);
+            $table->string('category');
             $table->string('email')->unique();
             $table->timestamps();
         });

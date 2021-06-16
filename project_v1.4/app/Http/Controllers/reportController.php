@@ -26,7 +26,8 @@ class reportController extends Controller
      */
     public function create()
     {
-        //
+        return view('reportPage.createReportPage');
+
     }
 
     /**
@@ -38,9 +39,13 @@ class reportController extends Controller
     public function store(Request $request)
     {
         $request -> validate([
-            'description' => 'required',
+            'judul_laporan' => 'required',
             'category' => 'required',
+            'description' => 'required',
         ]);
+
+        Report::create($request->all());
+
         return redirect('/reports')->with('status', 'Data laporan berhasil ditambahkan');
     }
 

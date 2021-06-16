@@ -66,7 +66,8 @@ class mitraController extends Controller
      */
     public function edit(Mitra $mitra)
     {
-        //
+        return view('mitraPage.editMitraPage',compact('mitra'));
+
     }
 
     /**
@@ -78,7 +79,21 @@ class mitraController extends Controller
      */
     public function update(Request $request, Mitra $mitra)
     {
-        //
+        $request -> validate([
+            'nama' => 'required',
+            'category' => 'required',
+            'email' => 'required',
+        ]);
+
+        Mitra::where('id', $mitra->id)
+                    ->update([
+                        'nama' => $request->nama,
+                        'alamat' => $request->alamat,
+                        'nomorhp' => $request->nomorhp,
+                        'category' => $request->category,
+                        'email' => $request->email
+                    ]);
+        return redirect('/mitras')->with('status', 'Data Mitra berhasil diubah');
     }
 
     /**

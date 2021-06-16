@@ -28,7 +28,7 @@
             </div>
             <div class="col-8">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="{{ route('customers.create') }}" class="btn btn-primary me-md-2" type="button">Print Customers</a>
+                    <a href="{{route('printCustomers')}}" class="btn btn-primary me-md-2 shadow" type="button">Print Customers</a>
                 </div>
             </div>
         </div>
@@ -43,6 +43,7 @@
                     <thead>
                         <tr style="color: #000a;">
                            <th scope="col">Photo</th>
+                           <th scope="col">ID</th> 
                            <th scope="col">Customer Name</th> 
                            <th scope="col">Address</th>
                            <th scope="col">Action</th>
@@ -52,18 +53,21 @@
                     <tbody>
                     @foreach ($customer as $customer)
                         <tr>
-                          <th scope="row">{{$loop -> iteration}}</th>
-                            <td>{{$customer -> nama}}</td>
-                            <td>{{$customer -> alamat}}</td>
-                            <td>
-                                <a href="#" class="badge bg-success text-decoration-none">Edit</a>
+                            <td scope="row" class="column-item">
+                                <img class="photo-profile rounded-circle" width="80" height="80"  src="{{$customer -> photo}}" alt="" />
+                            </td>
+                            <td style="padding: 40px 0px;">{{$customer -> id}}</td>
+                            <td style="padding: 40px 0px;">{{$customer -> nama}}</td>
+                            <td style="padding: 40px 0px;">{{$customer -> alamat}}</td>
+                            <td style="padding: 40px 0px;">
+                                <a href="{{route('customers.edit', $customer->id) }}" class="badge bg-success text-decoration-none">Edit</a>
                                 <form action="{{ route('customers.destroy', $customer->id) }}" method="post" class="d-inline">
                                 @method ('delete')
                                 @csrf
                                     <button type="submit" class="btn btn-danger" style="line-height:1; vertical-align:baseline; padding:.35em .65em; font-size:.75em;" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Delete</button>
                                 </form>
                             </td>
-                            <td>
+                            <td style="padding: 40px 0px;">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#detailsModal{{$customer->id}}" >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical ms-3 rounded-circle shadow" style="width:20px;height:20px;" viewBox="0 0 16 16">
                                     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>

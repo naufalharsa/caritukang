@@ -15,11 +15,9 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->integer('pembayaran_id');
-            // $table->integer('order_id');
-            $table->string('jenis_pembayaran');
+            $table->string('judul_laporan');
             $table->string('category');
-            $table->string('description');
+            $table->longText('description');
             $table->date('date');
             $table->timestamps();
         });

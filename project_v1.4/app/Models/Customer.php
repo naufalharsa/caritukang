@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
-    protected $fillable = ['username','password','nama','alamat','nomorhp','email'];
+    protected $fillable = ['id','username','password','nama','alamat','nomorhp','email'];
     protected $table = 'customers';
 
     use HasFactory;

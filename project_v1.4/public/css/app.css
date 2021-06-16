@@ -11184,3 +11184,11 @@ fieldset:disabled .btn {
 .authentication {
     background-color: rgb(245, 245, 245);
 }
+
+.nav-link:hover {
+    border-bottom: 3px solid #2e86de;
+}
+
+.date {
+    width: 200px;
+}

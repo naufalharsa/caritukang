@@ -65,17 +65,6 @@
 
     <!-- @yield('content'); -->
 
-    
-
-
-
-
-
-
-
-
-
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -89,15 +78,14 @@
     
     <script src="{{ mix('js/app.js') }}"></script>
 
+    <script>
+        $(document).on('ajaxComplete ready', function () {
+            $('.detailsModal').off('click').on('click', function () {
+                $('#detailsModalContent').load($(this).attr('value'));
+                $('#detailsModalTitle').html($(this).attr('title'));
+            });
+        });
+    </script>
+
   </body>
-  
-  <script>
-      $(document).on('ajaxComplete ready', function () {
-          $('.detailsModal').off('click').on('click', function () {
-              $('#detailsModalContent').load($(this).attr('value'));
-              $('#detailsModalTitle').html($(this).attr('title'));
-          });
-      });
-     
-  </script>
 </html>

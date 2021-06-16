@@ -29,7 +29,6 @@ class adminController extends Controller
      */
     public function create()
     {
-        //
         return view('adminPage.createAdminPage');
     }
 
@@ -41,8 +40,6 @@ class adminController extends Controller
      */
     public function store(Request $request)
     {
-        //
-
         $request -> validate([
             'nama' => 'required',
             'email' => 'required',

@@ -28,7 +28,7 @@
             </div>
             <div class="col-8">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="{{ route('customers.create') }}" class="btn btn-primary me-md-2" type="button">Print Customers</a>
+                    <a href="{{route('printMitra')}}" class="btn btn-primary me-md-2" type="button">Print Mitra</a>
                 </div>
             </div>
         </div>
@@ -43,6 +43,7 @@
                     <thead>
                         <tr style="color: #000a;">
                            <th scope="col">Photo</th>
+                           <th scope="col">ID</th>
                            <th scope="col">Mitra Name</th> 
                            <th scope="col">Category</th>
                            <th scope="col">Action</th>
@@ -53,10 +54,11 @@
                     @foreach ($mitra as $mitra)
                         <tr >
                           <th scope="row">{{$loop -> iteration}}</th>
+                            <td>{{$mitra -> id}}</td>
                             <td>{{$mitra -> nama}}</td>
-                            <td>{{$mitra -> role}}</td>
+                            <td>{{$mitra -> category}}</td>
                             <td>
-                                <a href="#" class="badge bg-success text-decoration-none">Edit</a>
+                                <a href="{{route('mitras.edit', $mitra->id)}}" class="badge bg-success text-decoration-none">Edit</a>
                                 <form action="{{ route('mitras.destroy', $mitra->id) }}" method="post" class="d-inline">
                                 @method ('delete')
                                 @csrf
@@ -106,7 +108,6 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
                                             </div>
                                         </div>
                                     </div>

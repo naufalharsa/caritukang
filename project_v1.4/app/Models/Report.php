@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Report extends Model
 {
+    protected $fillable = ['id','judul_laporan','category','description','date'];
+    protected $table = 'reports';
     use HasFactory;
 }

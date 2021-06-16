@@ -15,7 +15,6 @@ class CrudTest extends TestCase
     {
         // $this->assertTrue(true);
         $administrator = Administrator::create(["nama"=>"Fitriono Arya Riski", "alamat"=> "Jl.Tentara Pelajar Bojongbata","nomorhp"=>"085341172222","email"=>"aryariski9a@gmail.com","role"=>"Super administrator"]);
-
             $this -> assertDatabaseHas('administrators', ["nama"=>"Fitriono Arya Riski","alamat"=> "Jl.Tentara Pelajar Bojongbata","nomorhp"=>"085341172222","email"=>"aryariski9a@gmail.com","role"=>"Super administrator"]);
         
         // $customer = Customer::create(["username"=>"Ghirman","password"=>"ghirman12345","nama"=>"Ahmad Ghirman","alamat"=>"Jl.Merpati II Sukapura Bandung","nomorhp"=>"082343324323","email"=>"ahmadghirman@gmail.com"]);

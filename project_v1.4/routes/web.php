@@ -5,6 +5,8 @@ use App\Http\Controllers\customerController;
 use App\Http\Controllers\mitraController;
 use App\Http\Controllers\reportController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PDFController;
+
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Mitra;
@@ -39,6 +41,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('mitras',mitraController::class);
     Route::resource('reports', reportController::class);
 
+    Route::get('/printCustomers',[PDFController::class, 'getPDFCustomers'])->name('printCustomers');
+    Route::get('/printMitra',[PDFController::class, 'getPDFMitra'])->name('printMitra');
 });
 
 

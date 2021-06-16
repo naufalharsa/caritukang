@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use DB;
 
 class customerController extends Controller
 {
@@ -68,7 +69,7 @@ class customerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        return view('customerPage.editCustomerPage',compact('customer'));
     }
 
     /**
@@ -80,7 +81,19 @@ class customerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+        $request -> validate([
+            'nama' => 'required',
+            'email' => 'required',
+        ]);
+
+        Customer::where('id', $customer->id)
+                    ->update([
+                        'nama' => $request->nama,
+                        'alamat' => $request->alamat,
+                        'nomorhp' => $request->nomorhp,
+                        'email' => $request->email
+                    ]);
+        return redirect('/customers')->with('status', 'Data Customer berhasil diubah');
     }
 
     /**
@@ -94,4 +107,6 @@ class customerController extends Controller
         Customer::destroy($customer->id);
         return redirect('/customers')->with('status', 'Data customer berhasil dihapus');
     }
+
+
 }

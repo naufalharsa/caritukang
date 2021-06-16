@@ -36,10 +36,6 @@
         <div class="alert alert-success">
             {{ session('status') }}
         </div>
-        @else
-        <div class="alert alert-danger">
-            <p>Data laporan gagal ditambahkan</p>
-        </div>
         @endif
         <div class="row mt-5">
             <div class="col">
@@ -47,7 +43,7 @@
                     <thead>
                         <tr style="color: #000a;">
                            <th scope="col">Photo</th>
-                           <th scope="col">Description</th> 
+                           <th scope="col">Judul Laporan</th> 
                            <th scope="col">Action</th>
                            <th scope="col">Details</th>
                         </tr>
@@ -55,9 +51,11 @@
                     <tbody>
                     @foreach($report as $report)
                         <tr>
-                          <th scope="row"></th>
-                            <td style="max-width:250px;padding:10px">{{$report -> description}}</td>
-                            <td>
+                          <th scope="row">
+                              <img src="{{asset('img/img-laporan.png')}}" alt="gambar laporan" width="80" height="80">
+                          </th>
+                            <td style="padding: 40px 0px;">{{$report -> judul_laporan}}</td>
+                            <td style="padding: 40px 0px;">
                                 <a href="#" class="badge bg-success text-decoration-none">Edit</a>
                                 <form action="{{ route('reports.destroy', $report->id) }}" method="post" class="d-inline">
                                 @method ('delete')
@@ -66,7 +64,7 @@
                                 </form>
                                 <a href="#" class="badge bg-info text-decoration-none">Print</a>
                             </td>
-                            <td>
+                            <td style="padding: 40px 0px;">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#detailsModal" >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical ms-3 rounded-circle shadow" style="width:20px;height:20px;" viewBox="0 0 16 16">
                                     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
@@ -83,28 +81,25 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                            
                                                 <form>
                                                     <div class="mb-3">
-                                                        <label for="title" class="form-label">Report Title</label>
-                                                        <input type="text" class="form-control" id="title" value="" readonly>
+                                                        <label for="judul_laporan" class="form-label">Report Title</label>
+                                                        <input type="text" class="form-control" id="judul_laporan" value="{{$report->judul_laporan}}" readonly>
                                                     </div> 
                                                   
                                                     <div class="mb-3">
                                                         <label for="category" class="form-label">Category</label>
-                                                        <input type="text" class="form-control" id="category" value="" readonly>
+                                                        <input type="text" class="form-control" id="category" value="{{$report->category}}" readonly>
                                                     </div>
                                                    
                                                     <div class="mb-3">
                                                         <label for="description" class="form-label">Description</label>
-                                                        <textarea class="form-control" id="description-text" rows="5" placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur atque consequatur voluptate beatae in inventore iusto dignissimos sint molestiae consequuntur."></textarea>
+                                                        <textarea class="form-control" id="description" rows="5" readonly>{{$report->description}}</textarea>
                                                     </div>
                                                 </form>
-
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
                                             </div>
                                         </div>
                                     </div>

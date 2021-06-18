@@ -39,6 +39,7 @@
                         <tr style="color: #000a;">
                            <th scope="col">No</th>
                            <th scope="col">Customer ID</th> 
+                           <th scope="col">Name</th> 
                            <th scope="col">Description</th> 
                            <th scope="col">Action</th>
                         </tr>

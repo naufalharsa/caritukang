@@ -68,7 +68,8 @@ class reportController extends Controller
      */
     public function edit(Report $report)
     {
-        //
+        return view('reportPage.editReportPage',compact('report'));
+
     }
 
     /**
@@ -80,7 +81,20 @@ class reportController extends Controller
      */
     public function update(Request $request, Report $report)
     {
-        //
+        $request -> validate([
+            'judul_laporan' => 'required',
+            'description' => 'required',
+        ]);
+
+        Report::where('id', $report->id)
+                    ->update([
+                        'judul_laporan' => $request->judul_laporan,
+                        'category' => $request->category,
+                        'description' => $request->description,
+                        'date' => $request->date,
+                        
+                    ]);
+        return redirect('/reports')->with('status', 'Data laporan berhasil diubah');
     }
 
     /**

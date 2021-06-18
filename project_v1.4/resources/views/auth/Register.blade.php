@@ -34,15 +34,15 @@
                     {{ csrf_field() }}
                     <div class="mb-2">
                         <label for="name" class="form-label">Full name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your fullname">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your fullname" required>
                     </div>
                     <div class="mb-2">
                         <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter your email address">
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter your email address" required>
                     </div>
                     <div class="mb-2">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" name="password" id="password" enter="Enter your password">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
                     </div>
                     
                     <button type="submit" class="btn btn-primary">Register</button>

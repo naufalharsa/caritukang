@@ -21,7 +21,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Lengkap</label>
-                        <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ $mitra->nama}}">
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ $mitra->nama}}" required>
                         @error('nama')
                         <div id="validationServerUsernameFeedback" class="invalid-feedback">
                             {{ $message }}
@@ -30,19 +30,19 @@
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat</label>
-                        <input type="text" class="form-control " id="alamat" name="alamat"  value="{{ $mitra->alamat }}">
+                        <input type="text" class="form-control " id="alamat" name="alamat"  value="{{ $mitra->alamat }}" required>
                     </div>
                     <div class="mb-3">
                         <label for="nomorhp" class="form-label">Nomor Handphone</label>
-                        <input type="text" class="form-control" id="nomorhp" name="nomorhp" value="{{ $mitra->nomorhp }}">
+                        <input type="text" class="form-control" id="nomorhp" name="nomorhp" value="{{ $mitra->nomorhp }}" required>
                     </div>
                     <div class="mb-3">
                         <label for="category" class="form-label">Kategori</label>
-                        <input type="text" class="form-control" id="category" name="category" value="{{ $mitra->category }}">
+                        <input type="text" class="form-control" id="category" name="category" value="{{ $mitra->category }}" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label @error('email') is-invalid @enderror">Email</label>
-                        <input type="email" class="form-control" id="email" name="email"  value="{{ $mitra->email }}">
+                        <input type="email" class="form-control" id="email" name="email"  value="{{ $mitra->email }}" required>
                         @error('email')
                         <div id="validationServerUsernameFeedback" class="invalid-feedback">
                             {{ $message }}

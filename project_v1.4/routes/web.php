@@ -4,6 +4,8 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\customerController;
 use App\Http\Controllers\mitraController;
 use App\Http\Controllers\reportController;
+use App\Http\Controllers\orderController;
+use App\Http\Controllers\paymentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PDFController;
 
@@ -23,8 +25,6 @@ use App\Models\Customer;
 |
 */
 
-// Route::get('/', [adminController::class,'index']);
-
 Route::get('/', function(){
     return view('auth.Login');
 })->name('login');
@@ -40,6 +40,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('customers',customerController::class);
     Route::resource('mitras',mitraController::class);
     Route::resource('reports', reportController::class);
+    Route::resource('orders', orderController::class);
+    Route::resource('payments', paymentController::class);
 
     Route::get('/printCustomers',[PDFController::class, 'getPDFCustomers'])->name('printCustomers');
     Route::get('/printMitra',[PDFController::class, 'getPDFMitra'])->name('printMitra');

@@ -25,6 +25,15 @@
                     <a class="nav-link" href="{{ route('customers.index')}}">Customer</a>
                     <a class="nav-link" href="{{ route('mitras.index')}}">Mitra</a>
                     <a class="nav-link" href="{{ route('reports.index') }}">Laporan</a>
+                    <div class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        History
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="{{route('orders.index')}}">Order</a></li>
+                        <li><a class="dropdown-item" href="{{route('payments.index')}}">Payment</a></li>
+                      </ul>
+                    </div>
                 </div>
             </div>
 

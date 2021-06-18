@@ -54,12 +54,12 @@
                     @foreach ($customer as $customer)
                         <tr>
                             <td scope="row" class="column-item">
-                                <img class="photo-profile rounded-circle" width="80" height="80"  src="{{$customer -> photo}}" alt="" />
+                                <img class="photo-profile rounded-circle" width="80" height="80"  src="{{asset('img/img-profile.png')}}" alt="" />
                             </td>
-                            <td style="padding: 40px 0px;">{{$customer -> id}}</td>
-                            <td style="padding: 40px 0px;">{{$customer -> nama}}</td>
-                            <td style="padding: 40px 0px;">{{$customer -> alamat}}</td>
-                            <td style="padding: 40px 0px;">
+                            <td style="padding: 40px 8px;">{{$customer -> id}}</td>
+                            <td style="padding: 40px 8px;">{{$customer -> nama}}</td>
+                            <td style="padding: 40px 8px;">{{$customer -> alamat}}</td>
+                            <td style="padding: 40px 8px;">
                                 <a href="{{route('customers.edit', $customer->id) }}" class="badge bg-success text-decoration-none">Edit</a>
                                 <form action="{{ route('customers.destroy', $customer->id) }}" method="post" class="d-inline">
                                 @method ('delete')
@@ -67,7 +67,7 @@
                                     <button type="submit" class="btn btn-danger" style="line-height:1; vertical-align:baseline; padding:.35em .65em; font-size:.75em;" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Delete</button>
                                 </form>
                             </td>
-                            <td style="padding: 40px 0px;">
+                            <td style="padding: 40px 8px;">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#detailsModal{{$customer->id}}" >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical ms-3 rounded-circle shadow" style="width:20px;height:20px;" viewBox="0 0 16 16">
                                     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>

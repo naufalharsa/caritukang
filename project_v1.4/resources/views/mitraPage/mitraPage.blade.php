@@ -53,11 +53,13 @@
                     <tbody>
                     @foreach ($mitra as $mitra)
                         <tr >
-                          <th scope="row">{{$loop -> iteration}}</th>
-                            <td>{{$mitra -> id}}</td>
-                            <td>{{$mitra -> nama}}</td>
-                            <td>{{$mitra -> category}}</td>
-                            <td>
+                            <th scope="row">
+                                <img class="photo-profile rounded-circle" width="80" height="80"  src="{{asset('img/img-profile-mitra.png')}}" alt="" />
+                            </th>
+                            <td style="padding: 40px 8px;">{{$mitra -> id}}</td>
+                            <td style="padding: 40px 8px;">{{$mitra -> nama}}</td>
+                            <td style="padding: 40px 8px;">{{$mitra -> category}}</td>
+                            <td style="padding: 40px 8px;">
                                 <a href="{{route('mitras.edit', $mitra->id)}}" class="badge bg-success text-decoration-none">Edit</a>
                                 <form action="{{ route('mitras.destroy', $mitra->id) }}" method="post" class="d-inline">
                                 @method ('delete')
@@ -65,7 +67,7 @@
                                     <button type="submit" class="btn btn-danger" style="line-height:1; vertical-align:baseline; padding:.35em .65em; font-size:.75em;" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Delete</button>
                                 </form>
                             </td>
-                            <td>
+                            <td style="padding: 40px 8px;">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#detailsModal{{$mitra->id}}" >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical ms-3 rounded-circle shadow" style="width:20px;height:20px;" viewBox="0 0 16 16">
                                     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>

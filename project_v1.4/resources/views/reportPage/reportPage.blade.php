@@ -10,7 +10,7 @@
 
         <div class="row">
             <div class="col">
-                <h3>laporan</h3>
+                <h3>Laporan</h3>
             </div>
         </div>
 
@@ -54,9 +54,9 @@
                           <th scope="row">
                               <img src="{{asset('img/img-laporan.png')}}" alt="gambar laporan" width="80" height="80">
                           </th>
-                            <td style="padding: 40px 0px;">{{$report -> judul_laporan}}</td>
-                            <td style="padding: 40px 0px;">
-                                <a href="#" class="badge bg-success text-decoration-none">Edit</a>
+                            <td style="padding: 40px 8px;">{{$report -> judul_laporan}}</td>
+                            <td style="padding: 40px 8px;">
+                                <a href="{{route('reports.edit', $report->id)}}" class="badge bg-success text-decoration-none">Edit</a>
                                 <form action="{{ route('reports.destroy', $report->id) }}" method="post" class="d-inline">
                                 @method ('delete')
                                 @csrf
@@ -64,7 +64,7 @@
                                 </form>
                                 <a href="#" class="badge bg-info text-decoration-none">Print</a>
                             </td>
-                            <td style="padding: 40px 0px;">
+                            <td style="padding: 40px 8px;">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#detailsModal" >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical ms-3 rounded-circle shadow" style="width:20px;height:20px;" viewBox="0 0 16 16">
                                     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>

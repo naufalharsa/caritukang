@@ -21,7 +21,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Lengkap</label>
-                        <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ $customer->nama}}">
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ $customer->nama}}" required>
                         @error('nama')
                         <div id="validationServerUsernameFeedback" class="invalid-feedback">
                             {{ $message }}
@@ -30,15 +30,15 @@
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat</label>
-                        <input type="text" class="form-control " id="alamat" name="alamat"  value="{{ $customer->alamat }}">
+                        <input type="text" class="form-control " id="alamat" name="alamat"  value="{{ $customer->alamat }}" required>
                     </div>
                     <div class="mb-3">
                         <label for="nomorhp" class="form-label">Nomor Handphone</label>
-                        <input type="text" class="form-control" id="nomorhp" name="nomorhp" value="{{ $customer->nomorhp }}">
+                        <input type="text" class="form-control" id="nomorhp" name="nomorhp" value="{{ $customer->nomorhp }}" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label @error('email') is-invalid @enderror">Email</label>
-                        <input type="email" class="form-control" id="email" name="email"  value="{{ $customer->email }}">
+                        <input type="email" class="form-control" id="email" name="email"  value="{{ $customer->email }}" required>
                         @error('email')
                         <div id="validationServerUsernameFeedback" class="invalid-feedback">
                             {{ $message }}

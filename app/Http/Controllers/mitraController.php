@@ -105,6 +105,6 @@ class mitraController extends Controller
     public function destroy(Mitra $mitra)
     {
         Mitra::destroy($mitra->id);
-        return redirect('/')->with('status', 'Data mitra berhasil dihapus');
+        return redirect('/mitras')->with('status', 'Data mitra berhasil dihapus');
     }
 }
